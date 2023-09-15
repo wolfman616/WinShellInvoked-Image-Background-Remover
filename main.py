@@ -1,8 +1,6 @@
 import sys
 import requests
 import os
-import tkinter as tk
-from tkinter import messagebox
 import ctypes
 
 # Set DPI awareness to "per monitor v2"
@@ -38,12 +36,15 @@ if r.ok:
 else:
     r.raise_for_status()
     print(f'ERROR: Could not remove background from {input_file}')
-    # Create a main window (it won't be visible)
-    root = tk.Tk()
-    root.withdraw()
+
     # Create a message box
-    messagebox.showinfo("ERROR" "Could not remove background from {input_file}")
-    # Schedule the closure of the message box after 5 seconds (5000 milliseconds)
-    root.after(5000, close_message_box)
-    # Start the tkinter main loop (this is required)
-    root.mainloop()
+    import ctypes
+
+    # Define constants for MessageBoxW
+    MB_ICONINFORMATION = 0x00000040
+    MB_OK = 0x00000000
+    MB_TIMEOUT = 0x00000200  # Indicates a timeout will be used
+
+    # Call the MessageBoxW function
+    user32 = ctypes.windll.user32
+    user32.MessageBoxW(None, "Could not remove background from {input_file}", "ERROR",  MB_ICONWARNING | MB_OK | MB_TIMEOUT, 0, 5000)
