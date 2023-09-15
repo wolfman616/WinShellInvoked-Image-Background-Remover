@@ -1,29 +1,32 @@
+import sys
 import requests
 import os
 
+input_file = sys.argv[1]
+print('.', input_file)
+
+output_file = input_file.split('.')[0] + '-nobg.png'
+
 path = os.getcwd()
-dir_list = os.listdir(f'{path}\\input')
 
-for image in dir_list:
-    print('.', image)
-    
-    if os.path.isfile(f'{path}\\output\\{image}'):
-        print(f'ERROR: {image} File already exists.')
-    else:
-        filetype = image.split('.')[-1]
+if os.path.isfile(f'{path}\\{output_file}'):
+    print(f'ERROR: {output_file} File already exists.')
+else:
+    filetype = input_file.split('.')[-1]
 
-        r = requests.post('https://clipdrop-api.co/remove-background/v1',
-            files={
-                'image_file': (
-                    image, open(f'{path}\\input\\{image}', 'rb'), f'image/{filetype}'
-                )
-            },
-            headers={'x-api-key': open(f"{path}\\YOUR_API_KEY.txt", 'r+').read().strip()}
-        )
-        if r.ok:
-            with open(f'{path}\\output\\{image.replace(filetype, "png")}', 'wb') as f:
-                f.write(r.content)
-            print('+', image)
-        else:
-            r.raise_for_status()
-            print('ERROR:', image)
+
+r = requests.post('https://clipdrop-api.co/remove-background/v1',
+files={
+    'image_file': (
+        input_file, open(f'{input_file}', 'rb'), f'image/{filetype}'
+    )
+},
+headers={'x-api-key': open(f"{path}\\YOUR_API_KEY.txt", 'r+').read().strip()}
+)
+if r.ok:
+    with open(f'{output_file.replace(filetype, "png")}', 'wb') as f:
+        f.write(r.content)
+    print(f'Removed background from {input_file} and saved as {output_file}')
+else:
+    r.raise_for_status()
+    print(f'ERROR: Could not remove background from {input_file}')
