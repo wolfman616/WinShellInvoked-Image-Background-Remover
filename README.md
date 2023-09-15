@@ -1,4 +1,4 @@
-# Mass Background Remover
+# ShellInvoked Image Background Remover
 
 This Python program uses the ClipDrop API to remove the background from multiple images at once. Simply place the images you want to process in the "input" folder, run the program, and the processed images will be saved to the "output" folder.
 
