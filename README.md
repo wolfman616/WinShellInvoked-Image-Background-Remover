@@ -1,7 +1,6 @@
 # ShellInvoked Image Background Remover
 
-This Python program uses the ClipDrop API to remove the background from multiple images at once. Simply place the images you want to process in the "input" folder, run the program, and the processed images will be saved to the "output" folder.
-
+This Python program uses the ClipDrop API to remove the background from images from the shell.
 To use the ClipDrop API, you will need to obtain an API key from the [ClipDrop website](https://clipdrop.co/apis/account), add the key to the following key: Computer\HKEY_CURRENT_USER\Software\_MW\clipdrop. add txt string with name apikey.
 
 
