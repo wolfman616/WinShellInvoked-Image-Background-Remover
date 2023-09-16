@@ -1,1 +1,1 @@
-run,% comspec " /c " quote("C:\windows\py.exe") chr(32) quote(a_args[1]) chr(32) quote(a_args[2]),,hide
+run,% "C:\windows\py.exe " . a_args[1] . " " . quote(a_args[2])
