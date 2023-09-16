@@ -15,7 +15,7 @@ To use the ClipDrop API, you will need to obtain an API key from the [ClipDrop w
 
 1. Clone this repository or download the source code.
 2. Obtain an API key from the [ClipDrop website](https://clipdrop.co/apis/account) and place it in "API_KEY.reg".
-3. pass argument to script from shell.
+3. pass argument to script from shell. Or load the reg file "example_menuentry.reg"
 
 ![image](https://github.com/wolfman616/WinShellInvoked-Image-Background-Remover/assets/62726599/2d650ef1-bb0b-4f37-a9f3-17960ac49568)
 ![image](https://github.com/wolfman616/WinShellInvoked-Image-Background-Remover/assets/62726599/85a0d8da-bd7e-438d-96d3-f2d2a2d29516)
