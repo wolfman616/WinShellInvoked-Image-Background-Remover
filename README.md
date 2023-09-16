@@ -18,6 +18,7 @@ To use the ClipDrop API, you will need to obtain an API key from the [ClipDrop w
 
 ![image](https://github.com/wolfman616/WinShellInvoked-Image-Background-Remover/assets/62726599/2d650ef1-bb0b-4f37-a9f3-17960ac49568)
 <img width="727" alt="Clipboarder 2023 09 16-018" src="https://github.com/wolfman616/WinShellInvoked-Image-Background-Remover/assets/62726599/ef37f8d4-2d83-40b2-9668-da3823236042">
+Note the ahk python loader script location must match in the registry command.
 
 ## License
 
